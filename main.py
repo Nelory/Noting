@@ -1,3 +1,4 @@
 print('hi')
-print('Holaa ! Wats you name?')
-print('Nice I like it!')
+print('Hola ! Wats you name?')
+print('Nice, I like it!')
+print('My name si Artem')
