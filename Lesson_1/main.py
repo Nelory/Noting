@@ -1,13 +1,15 @@
 from character import Character
 
 player1 = Character(name='Ameba', damage=3)
-print(player1.health)
+player2 = Character(name= 'Anton', health=150)
 
-player1.set_name('Ameba')
-print(player1.name)
+print(f' - Player1 - \n{player1}')
+print(f' - Player2 - \n{player2}')
 
-print(player1)
+player1.attack(player2)
+print('Player 1  attacked  Player 2')
+player2.attack(player1)
+print('Player 2  attacked  Player 1')
 
-player1.take_damage(10)
-
-print(player1)
+print(f' - Player1 - \n{player1}')
+print(f' - Player2 - \n{player2}')
