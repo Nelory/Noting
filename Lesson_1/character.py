@@ -17,5 +17,8 @@ class Character:
             f'Damage: {self.damage}\n' \
             f'Defence: {self.defence}\n'
 
+    def take_damage(self, damage):
+        self.health -= max(damage, 0)
+
     def set_name(self, new_name):
         self.name = new_name
