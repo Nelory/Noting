@@ -20,5 +20,8 @@ class Character:
     def take_damage(self, damage):
         self.health -= max(damage, 0)
 
+    def attack(self, enemy):
+        enemy.take_damage(self.damage)
+
     def set_name(self, new_name):
         self.name = new_name
