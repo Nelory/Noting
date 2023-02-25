@@ -1,15 +1,25 @@
 from character import Character
 
 player1 = Character(name='Ameba', damage=3)
-player2 = Character(name= 'Anton', health=150)
+Student = Character(name= 'Student', health=150,damage=10000, age=2004, group=11, average_mark=11)
 
 print(f' - Player1 - \n{player1}')
-print(f' - Player2 - \n{player2}')
+print(f' - Student - \n{Student}')
 
-player1.attack(player2)
+player1.attack(Student)
 print('Player 1  attacked  Player 2')
-player2.attack(player1)
-print('Player 2  attacked  Player 1')
+Student.attack(player1)
+print('Student  attacked  Player 1')
 
 print(f' - Player1 - \n{player1}')
-print(f' - Player2 - \n{player2}')
+if Character.health >=0:
+    print("He died")
+else:
+    print("He alive")
+
+print(f' - Student - \n{Student}')
+
+if Character.health <=0:
+    print("He died")
+else:
+    print("He alive")
