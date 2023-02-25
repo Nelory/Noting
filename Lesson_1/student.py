@@ -1,4 +1,4 @@
-class Character:
+class Student:
     name = ''
     health = 100
     damage = 1
@@ -10,7 +10,9 @@ class Character:
         self.name = name
         self.health = health
         self.damage = damage
-
+        self.group = group
+        self.age = age
+        self.average_mark = average_mark
 
     def __str__(self):
         return \
