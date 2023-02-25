@@ -32,3 +32,6 @@ class Character:
 
     def get_age(self, new_age):
         self.age = new_age
+
+    def is_alive(self):
+        return self.health > 0
