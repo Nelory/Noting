@@ -2,11 +2,13 @@ import random
 
 
 def roll(possibility):
-    return random.randint(1, 100) <= possibility
+    return random.randint(1,5) <= possibility
 
 
 counter = 0
-for i in range(100):
-    if roll(30):
-        counter += 1
+for i in range(1):
+    if roll(1):
+        counter += 1000
+    else:
+        counter += 8
 print(counter)
