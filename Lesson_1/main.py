@@ -1,16 +1,19 @@
-from character import Character
-from student import Student
+from berserk import Berserk
+from tank import Tank
 
-player1 = Character(name='Ameba', damage=3)
-Student = Student(name='Anton', health=100,damage=100, age=2004, group=11, average_mark=11)
+player1 = Tank(name='Vasya', damage=10, defence=3)
+player2 = Berserk(name='Petya', damage=10)
 
-print(f' - Player1 - \n{player1}')
-print(f' - student.py - \n{Student}')
+print(f' - Player 1 - \n{player1}')
+print(f' - Player 2 - \n{player2}')
 
-player1.attack(Student)
-print('Player 1  attacked  Player 2')
-Student.attack(player1)
-print('student.py  attacked  Player 1')
+while player1.is_alive() and player2.is_alive():
+    player1.attack(player2)
+    # player2.health -= max(player1.damage, 0)
+    print('Player 1 attacted Player 2')
+    player2.attack(player1)
+    print('Player 2 attacted Player 1')
 
-print(f' - Player1 - \n{player1}')
-print(f' - student.py - \n{Student}')
+    print(f' - Player 1 - \n{player1}')
+    print(f' - Player 2 - \n{player2}')
+    print('\n\n')
