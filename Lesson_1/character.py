@@ -1,3 +1,11 @@
+class NotEnoughHealth(BaseException):
+    def __init__(self, message=''):
+        BaseException.__init__(self, message)
+        self.message = message
+
+    def __str__(self):
+        return self.message
+
 class Character:
     name = ''
     health = 100
@@ -21,6 +29,9 @@ class Character:
     def take_damage(self, damage):
         self.health -= max(damage, 0)
 
+        if self.health < 0:
+            raise NotEnoughHealth(' NO HP!')
+
     def attack(self, enemy):
         enemy.take_damage(self.damage)
 
@@ -29,3 +40,18 @@ class Character:
 
     def is_alive(self):
         return self.health > 0
+
+
+character = Character(100, 100)
+print(character)
+
+
+
+while True:
+    try:
+        character.take_damage(100)
+    except NotEnoughHealth:
+        print('HEALTH END')
+        break
+    else:
+        print(character)
