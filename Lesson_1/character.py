@@ -26,11 +26,6 @@ class Character:
             f'Damage: {self.damage}\n' \
             f'Defence: {self.defence}\n'
 
-    def take_damage(self, damage):
-        self.health -= max(damage, 0)
-
-        if self.health < 0:
-            raise NotEnoughHealth(' NO HP!')
 
     def attack(self, enemy):
         enemy.take_damage(self.damage)
@@ -40,6 +35,13 @@ class Character:
 
     def is_alive(self):
         return self.health > 0
+
+    def take_damage(self, damage):
+        self.health -= max(damage, 0)
+
+        if self.health < 0:
+            raise NotEnoughHealth(' NO HP!')
+
 
 
 character = Character(100, 100)
